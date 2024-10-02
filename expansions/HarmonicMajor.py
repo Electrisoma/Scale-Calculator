@@ -27,20 +27,26 @@ def scale():
   print(f"{colors.LG}6.Lydian Augmented #2{colors.END}")
   print(f"{colors.LG}7.Locrian bb7{colors.END}")
   scale = scaleA
+
   while True:
     choice = input(f"{colors.LP}>Enter scale: {colors.END}")
-    if choice == 'b':
+
+    if choice == 'b': #back button
       back()
       break
+
     firstPrompt = input(f"{colors.R}>Sharps or flats(1/2): {colors.END}")
+
     if firstPrompt in ['1','2']:
       if firstPrompt == '1':
         scale = scaleA
       elif firstPrompt == '2':
         scale = scaleB 
-    if firstPrompt == 'b':
+
+    if firstPrompt == 'b': #back button
       back()
       break
+
     if choice in ['1','2','3','4','5','6','7']:
       try:
         if choice == '1':
@@ -57,19 +63,23 @@ def scale():
           print(f"{colors.LG}{colors.BOLD}>>Lydian Augmented #2{colors.END}")
         elif choice == '7':
           print(f"{colors.LG}{colors.BOLD}>>Locrian bb7{colors.END}")
+
         if firstPrompt == '1':
           inp = int(input(f"{colors.R}>Enter number of sharps(>1): {colors.END}"))
         elif firstPrompt == '2':
           inp = int(input(f"{colors.R}>Enter number of flats(>1): {colors.END}"))
         else:
           inp = 1
+
         if inp & 1: #circle of fifths calculator
           flats = int(inp) * 4
         else:
           flats = int(inp) - 1 * 3
+
       except ValueError:
         print(invalid)
         continue
+
       if choice == '1': #harm major
         def shiftscale(scale,flats):
           scaleshifter = deque(scale)
@@ -81,6 +91,7 @@ def scale():
           newscale.pop(6)
           newscale.pop(6)
           return newscale        
+
         print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
         print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Harmonic Major" + f"{colors.END}")
       elif choice == '2': #dorian b2
@@ -94,6 +105,7 @@ def scale():
           newscale.pop(5)
           newscale.pop(5)
           return newscale 
+
         print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
         print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Dorian b2" + f"{colors.END}")
       elif choice == '3': #phrygian b4
@@ -107,6 +119,7 @@ def scale():
           newscale.pop(4)
           newscale.pop(6)            
           return newscale 
+
         print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
         print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Phrygian b4" + f"{colors.END}")
       elif choice == '4': #lydian b3
@@ -120,6 +133,7 @@ def scale():
           newscale.pop(3)
           newscale.pop(5)
           return newscale 
+
         print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
         print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Dorian #11" + f"{colors.END}")
       elif choice == '5': #mixolydian b2
@@ -133,6 +147,7 @@ def scale():
           newscale.pop(4)
           newscale.pop(5)
           return newscale 
+
         print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
         print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Mixolydian b2" + f"{colors.END}")          
       elif choice == '6': #lydian aug #2
@@ -146,6 +161,7 @@ def scale():
           newscale.pop(4)
           newscale.pop(6)
           return newscale 
+
         print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
         print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Lydian Augmented #2" + f"{colors.END}")          
       elif choice == '7': #locrian bb7
@@ -159,6 +175,7 @@ def scale():
           newscale.pop(3)
           newscale.pop(5)
           return newscale 
+
         print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
         print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Locrian bb7" + f"{colors.END}")   
     else:
