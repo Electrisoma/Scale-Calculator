@@ -2,7 +2,7 @@
 Template Major Key Signature Calculator - A template for major keys to make modding easier
 """
 
-scalename = 'Template'
+scalename = 'TemplateMajor'
 
 import sys
 sys.path.append("utils")
