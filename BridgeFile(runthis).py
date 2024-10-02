@@ -19,6 +19,7 @@ while True:
   MeloMinor = Path('expansions/MelodicMinor.py')
   DHarmMinor = Path('expansions/DoubleHarmonicMinor.py')
   scales = [] #scale list
+
   if IMajor.is_file():
     scales.append('--Major')
     from expansions import Major
@@ -33,36 +34,43 @@ while True:
   if DHarmMinor.is_file():
     scales.append('--Double Harmonic Minor')
     from expansions import DoubleHarmonicMinor
+
   #scale list print
   print(f"{colors.Y}select source scale{colors.END}")
   print(f"{colors.LG}" + '\n'.join(scales) + f"{colors.END}")
   print(f"{colors.LR}press (b) to go back{colors.END}")
   source = input(f"{colors.R}>Enter source scale: {colors.END}")
+
   if source in ['1','2','3','4','5']:
     if source == '1':
       if IMajor.is_file():
         Major.scale()
       else:
         print(invalid)
+
     elif source == '2':
       if HarmMinor.is_file():
         HarmonicMinor.scale()
       else:
         print(invalid)
+
     elif source == '3':
       if HarmMajor.is_file():
         HarmonicMinor.scale()
       else:
         print(invalid)
+
     elif source == '4':
       if MeloMinor.is_file():
         MelodicMinor.scale()
       else:
         print(invalid)
+
     elif source == '5':
       if DHarmMinor.is_file():
         DoubleHarmonicMinor.scale()
       else:
         print(invalid)
+
   else:
     print(invalid)
