@@ -68,9 +68,9 @@ def scale():
           inp = int(input(f"{colors.R}>Enter number of sharps(>1): {colors.END}"))
         elif firstPrompt == '2':
           inp = int(input(f"{colors.R}>Enter number of flats(>1): {colors.END}"))
-        else:
-          inp = 1
-
+        
+        if inp == 0: #preventing some weird stuff
+            inp = 1
         if inp & 1: #circle of fifths calculator
           flats = int(inp) * 4
         else:
