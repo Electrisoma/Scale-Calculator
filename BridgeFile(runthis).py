@@ -39,7 +39,7 @@ while True:
   #scale list print
   print(f"{colors.Y}select source scale{colors.END}")
   print(f"{colors.LG}" + '\n'.join(scales) + f"{colors.END}")
-  print(f"{colors.LR}press (b) to go back{colors.END}")
+  print(f"{colors.LR}type (b) to go back{colors.END}")
 
   source = input(f"{colors.R}>Enter source scale: {colors.END}")
 
