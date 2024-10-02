@@ -4,7 +4,7 @@ Key Signature Calculator Framework - Bridges all associated files
 
 #total amount of scales 
 #y = 2(x(7^2(12)))
-#x = expansions
+#x = total number of files in expansions
 
 import sys
 sys.path.append("utils")
