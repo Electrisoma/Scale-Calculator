@@ -1,7 +1,7 @@
 import os
 
-scaleA = ['A','A#','B','C','C#','D','D#','E','F','F#','G','G#']
-scaleB = ['A','Bb','B','C','Db','D','Eb','E','F','Gb','G','Ab']
+scaleA = ['A','A#','B','C','C#','D','D#','E','F','F#','G','G#'] #sharps
+scaleB = ['A','Bb','B','C','Db','D','Eb','E','F','Gb','G','Ab'] #flats
 
 def clear_screen():
     if os.name == 'nt':
@@ -9,7 +9,7 @@ def clear_screen():
     else:
         _ = os.system('clear')
 
-def back():
+def back(): #back button
     clear_screen()
     return
 
