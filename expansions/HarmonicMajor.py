@@ -26,6 +26,7 @@ def scale():
   print(f"{colors.LG}5.Mixolydian b2{colors.END}")
   print(f"{colors.LG}6.Lydian Augmented #2{colors.END}")
   print(f"{colors.LG}7.Locrian bb7{colors.END}")
+
   scale = scaleA
 
   while True:
