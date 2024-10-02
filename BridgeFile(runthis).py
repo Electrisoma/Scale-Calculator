@@ -13,11 +13,12 @@ from calcutils import colors
 from pathlib import Path
 
 while True:
-  IMajor = Path('expansions/Major.py')
+  IMajor = Path('expansions/Major.py') #"IMajor" as in Ionian Major
   HarmMinor = Path('expansions/HarmonicMinor.py')
   HarmMajor = Path('expansions/HarmonicMajor.py')
   MeloMinor = Path('expansions/MelodicMinor.py')
   DHarmMinor = Path('expansions/DoubleHarmonicMinor.py')
+
   scales = [] #scale list
 
   if IMajor.is_file():
@@ -39,6 +40,7 @@ while True:
   print(f"{colors.Y}select source scale{colors.END}")
   print(f"{colors.LG}" + '\n'.join(scales) + f"{colors.END}")
   print(f"{colors.LR}press (b) to go back{colors.END}")
+
   source = input(f"{colors.R}>Enter source scale: {colors.END}")
 
   if source in ['1','2','3','4','5']:
