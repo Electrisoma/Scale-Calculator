@@ -26,20 +26,26 @@ def scale():
   print(f"{colors.LG}5.Phrygian Dominant{colors.END}")
   print(f"{colors.LG}6.Lydian #2{colors.END}")
   print(f"{colors.LG}7.Altered Diminished{colors.END}")
+
   while True:
     choice = input(f"{colors.LP}>Enter scale: {colors.END}")
-    if choice == 'b':
+
+    if choice == 'b': #back button
       back()
       break
+
     firstPrompt = input(f"{colors.R}>Sharps or flats(1/2): {colors.END}")
+
     if firstPrompt in ['1','2']:
       if firstPrompt == '1':
         scale = scaleA
       elif firstPrompt == '2':
         scale = scaleB 
-    if firstPrompt == 'b':
+
+    if firstPrompt == 'b': #back button
       back()
       break
+
       if choice in ['1','2','3','4','5','6','7']:
           try:
             if choice == '1':
@@ -56,19 +62,23 @@ def scale():
               print(f"{colors.LG}{colors.BOLD}>>Lydian #2{colors.END}")
             if choice == '7':
               print(f"{colors.LG}{colors.BOLD}>>Altered Diminished{colors.END}")
+
             if firstPrompt == '1':
               inp = int(input(f"{colors.R}>Enter number of sharps(>1): {colors.END}"))
             elif firstPrompt == '2':
               inp = int(input(f"{colors.R}>Enter number of flats(>1): {colors.END}"))
-            if inp == 0:
+
+            if inp == 0: #preventing some weird stuff
               inp = 1
             if inp & 1: #circle of fifths calculator
               flats = int(inp) + 1
             else:
               flats = int(inp) - 3
+
           except ValueError:
                print(invalid)
                continue
+
           if choice == '1': #harm minor
             def shiftscale(scale,flats):
               scaleshifter = deque(scale)
@@ -80,6 +90,7 @@ def scale():
               newscale.pop(4)
               newscale.pop(6)
               return newscale        
+
             print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
             print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Harmonic Minor" + f"{colors.END}")
           elif choice == '2': #locrian ♮ 6
@@ -93,6 +104,7 @@ def scale():
               newscale.pop(5)
               newscale.pop(5)
               return newscale 
+
             print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
             print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Locrian ♮ 6" + f"{colors.END}")
           elif choice == '3': #aug major
@@ -106,6 +118,7 @@ def scale():
               newscale.pop(4)
               newscale.pop(4)            
               return newscale 
+
             print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
             print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Augmented Major" + f"{colors.END}")
           elif choice == '4': #dorian #11
@@ -118,7 +131,8 @@ def scale():
               newscale.pop(3)
               newscale.pop(3)
               newscale.pop(5)
-              return newscale 
+              return newscale
+ 
             print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
             print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Dorian #11" + f"{colors.END}")
           elif choice == '5': #phrygian dominant
@@ -132,6 +146,7 @@ def scale():
               newscale.pop(4)
               newscale.pop(6)
               return newscale 
+
             print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
             print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Phrygian Dominant" + f"{colors.END}")          
           elif choice == '6': #lydian #2
@@ -145,6 +160,7 @@ def scale():
               newscale.pop(5)
               newscale.pop(6)
               return newscale 
+
             print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
             print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Lydian #2" + f"{colors.END}")          
           elif choice == '7': #alt diminished
@@ -158,6 +174,7 @@ def scale():
               newscale.pop(5)
               newscale.pop(7)
               return newscale 
+
             print(f"{colors.Y}" + str(shiftscale(scale,flats)) + f"{colors.END}")
             print(f"{colors.LG}" + shiftscale(scale,flats)[0] + " " + "Altered Diminished" + f"{colors.END}")   
       else:
