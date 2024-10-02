@@ -72,6 +72,7 @@ def scale():
         
         if inp == 0: #preventing some weird stuff
             inp = 1
+
         if inp & 1: #circle of fifths calculator
           flats = int(inp) * 4
         else:
