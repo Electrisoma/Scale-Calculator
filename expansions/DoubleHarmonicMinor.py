@@ -27,6 +27,8 @@ def scale():
   print(f"{colors.LG}6.Lydian #2 #6{colors.END}")
   print(f"{colors.LG}7.Ultraphrygian{colors.END}")
 
+  scale = scaleA
+
   while True:
     choice = input(f"{colors.LP}>Enter scale: {colors.END}")
 
